@@ -76,7 +76,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     Log.d("login", "after login");
 
-
                 }
 
 
