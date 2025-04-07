@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1056228657650",
+    "project_id": "moviedatabase-mobiledev",
+    "storage_bucket": "moviedatabase-mobiledev.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056228657650:android:ee092687a653a39776036b",
+        "android_client_info": {
+          "package_name": "com.example.assignment3_akorchynskyi_200524341"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7S6uv6-GXQEtkxsKh_dMmHI9KuPSR0Jo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
