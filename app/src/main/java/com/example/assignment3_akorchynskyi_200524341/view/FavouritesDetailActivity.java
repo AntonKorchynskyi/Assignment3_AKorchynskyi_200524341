@@ -101,7 +101,8 @@ public class FavouritesDetailActivity extends AppCompatActivity {
                 .addOnSuccessListener(aVoid -> Toast.makeText(FavouritesDetailActivity.this, "Movie updated", Toast.LENGTH_SHORT).show())
                 .addOnFailureListener(e -> Toast.makeText(FavouritesDetailActivity.this, "Failed to update: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
-    //Deletes Movie
+
+    // deletes Movie
     private void deleteMovie() {
         if (currentMovie == null || docId == null) return;
 
