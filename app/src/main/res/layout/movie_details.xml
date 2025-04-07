@@ -20,9 +20,9 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="385dp"
-        android:layout_height="126dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="389dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="Title"
         android:textColor="@color/white"
@@ -77,14 +77,13 @@
         android:id="@+id/description"
         android:layout_width="415dp"
         android:layout_height="180dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="72dp"
         android:paddingHorizontal="10pt"
         android:text="Description"
         android:textColor="@color/white"
         android:textSize="9pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -98,4 +97,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/AddFavouritesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Add To Favourites"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

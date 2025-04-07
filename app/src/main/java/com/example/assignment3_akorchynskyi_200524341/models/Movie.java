@@ -1,6 +1,8 @@
 package com.example.assignment3_akorchynskyi_200524341.models;
 
-public class Movie {
+import java.io.Serializable;
+
+public class Movie implements Serializable {
 
     private String movieName, movieYear, img, imdbID, genres, rating, description;
 

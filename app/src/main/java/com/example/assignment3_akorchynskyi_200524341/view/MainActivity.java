@@ -64,6 +64,14 @@ public class MainActivity extends AppCompatActivity implements MovieClickListene
             }
         });
 
+        binding.favouritesScreenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentObj = new Intent(getApplicationContext(), FavouritesActivity.class);
+                startActivity(intentObj);
+            }
+        });
+
     }
 
     // moves user to movie details page once movie ViewHolder is clicked
