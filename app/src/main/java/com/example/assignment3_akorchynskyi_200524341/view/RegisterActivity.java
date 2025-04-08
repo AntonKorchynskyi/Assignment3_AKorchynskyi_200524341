@@ -41,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         setContentView(binding.getRoot());
 
+        // move to login page
         binding.textViewToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,8 +50,10 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        // get instance of auth
         mAuth = FirebaseAuth.getInstance();
 
+        // register button functionality
         binding.buttonRegister.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -95,6 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+    // register user in firebase
     private void registerUser (String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -106,9 +110,9 @@ public class RegisterActivity extends AppCompatActivity {
                             // sign in success
                             Log.d("tag", "registerWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(RegisterActivity.this, user.getUid(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
 
-                            // now navigate to LoginActivity after successful registration
+                            // navigate to LoginActivity after successful registration
                             Intent intentObj = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(intentObj);
 

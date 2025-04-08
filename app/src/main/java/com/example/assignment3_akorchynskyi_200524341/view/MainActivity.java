@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.assignment3_akorchynskyi_200524341.databinding.ActivityMainBinding;
 import com.example.assignment3_akorchynskyi_200524341.viewmodel.MovieViewModel;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -21,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements MovieClickListene
     MyAdapter myAdapter;
 
     MovieViewModel viewModel;
+
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements MovieClickListene
 
                 if (binding.editTextText.getText().toString().isEmpty()) {
                     Log.d("TAG", "Search is empty");
+                    Toast.makeText(MainActivity.this, "Search is empty", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     viewModel.setSearchQuery(binding.editTextText.getText().toString());
@@ -64,11 +69,23 @@ public class MainActivity extends AppCompatActivity implements MovieClickListene
             }
         });
 
+        // favourites button
         binding.favouritesScreenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentObj = new Intent(getApplicationContext(), FavouritesActivity.class);
                 startActivity(intentObj);
+            }
+        });
+
+        // logs user out and moves him to login page
+        binding.logOutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                Intent intentObj = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intentObj);
+                finish(); // so that user cannot click back button to return to main page
             }
         });
 

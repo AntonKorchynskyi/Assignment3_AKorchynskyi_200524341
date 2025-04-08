@@ -39,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(binding.getRoot());
 
+        // button to Register page
         binding.textViewToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,8 +48,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // auth instance
         mAuth = FirebaseAuth.getInstance();
 
+        // login functionality
         binding.buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    // login user
     private void registerUser (String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -94,10 +98,13 @@ public class LoginActivity extends AppCompatActivity {
                             // sign in success
                             Log.d("tag", "loginWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(LoginActivity.this, user.getUid(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
 
                             Intent intentObj = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intentObj);
+
+                            binding.editTextEmail.getText().clear();
+                            binding.editTextPassword.getText().clear();
 
                         } else {
 
